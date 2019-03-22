@@ -1,5 +1,14 @@
 package db;
 
+import java.util.Set;
+
+import entity.Order;
+import entity.TrackOrderEntity;
+
+/**
+ * @author Jingqiao Xu
+ *
+ */
 public interface DBConnection {
 	/**
 	 * Close the connection.
@@ -12,7 +21,7 @@ public interface DBConnection {
 	 * @param userId
 	 * @param itemIds
 	 */
-	
+
 	public String getFullname(String userId);
 
 	/**
@@ -24,7 +33,7 @@ public interface DBConnection {
 	 * @return boolean
 	 */
 	public boolean verifyLogin(String userId, String password);
-	
+
 	/**
 	 * 
 	 * @param userId
@@ -33,5 +42,16 @@ public interface DBConnection {
 	 * @param lastname
 	 * @return
 	 */
-	public boolean registerUser(String userId, String username, String password, String email, String firstname, String lastname);
+	public boolean registerUser(String userId, String username, String password, String email, String firstname,
+			String lastname);
+
+	/**
+	 * @param userId
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public Set<Order> getHistoryOrders(String userId, Integer start, Integer end);
+	public boolean placeOrder(Order order);
+	public Set<TrackOrderEntity> trackOrder(String orderId);
 }

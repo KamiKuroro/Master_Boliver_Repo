@@ -3,7 +3,7 @@ package db.mysql;
 public class MySQLDBUtil {
 	private static final String HOSTNAME = "localhost";
 	private static final String PORT_NUM = "3306";
-	public static final String DB_NAME = "boliverdb"; // please use "boliverdb" as your database name in your local environment
+	public static final String DB_NAME = "boliver"; // please use "boliverdb" as your database name in your local environment
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "root";
 	public static final String URL = "jdbc:mysql://"

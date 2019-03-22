@@ -84,9 +84,12 @@ public class MySQLTableCreation {
 					+ "order_id VARCHAR(255) NOT NULL,"
 					+ "robot_id VARCHAR(255) NOT NULL,"
 					+ "user_id VARCHAR(255) NOT NULL,"
+					+ "order_Status VARCHAR(255) NOT NULL,"
 					+ "origin VARCHAR(255) NOT NULL,"
 					+ "destination VARCHAR(255) NOT NULL,"
 					+ "e_arrival VARCHAR(255) NOT NULL,"
+					+ "create_time VARCHAR(255) NOT NULL,"
+					+ "cost VARCHAR(255) NOT NULL,"
 					+ "PRIMARY KEY (order_id),"
 					+ "FOREIGN KEY (robot_id) REFERENCES Robot(robot_id),"
 					+ "FOREIGN KEY (user_id) REFERENCES Users(user_id)"
@@ -97,11 +100,13 @@ public class MySQLTableCreation {
 					+ "order_id VARCHAR(255) NOT NULL,"
 					+ "robot_id VARCHAR(255) NOT NULL,"
 					+ "user_id VARCHAR(255) NOT NULL,"
-					+ "orderStatus VARCHAR(255) NOT NULL,"
+					+ "order_Status VARCHAR(255) NOT NULL,"
 					+ "origin VARCHAR(255) NOT NULL,"
 					+ "destination VARCHAR(255) NOT NULL,"
 					+ "e_arrival VARCHAR(255) NOT NULL,"
 					+ "a_arrival VARCHAR(255) NOT NULL,"
+					+ "create_time VARCHAR(255) NOT NULL,"
+					+ "cost VARCHAR(255) NOT NULL,"
 					+ "PRIMARY KEY (order_id),"
 					+ "FOREIGN KEY (robot_id) REFERENCES Robot(robot_id),"
 					+ "FOREIGN KEY (user_id) REFERENCES Users(user_id)"
@@ -161,20 +166,20 @@ public class MySQLTableCreation {
 			statement.execute(sql);
 			
 			    // INSERT INTO CurrentOrder
-			sql = "INSERT INTO CurrentOrder VALUES('1','4','1','3639 18th St, San Francisco, CA 94110','375 Valencia St, San Francisco, CA 94103','5:00pm 3/25/2019')";
+			sql = "INSERT INTO CurrentOrder VALUES('1','4','1','1','3639 18th St, San Francisco, CA 94110','375 Valencia St, San Francisco, CA 94103','5:00pm 3/25/2019','20190305123521','12')";
 			statement.execute(sql);
-			sql = "INSERT INTO CurrentOrder VALUES('2','7','2','3639 Taraval, San Francisco, CA 94116','3132 Vicente St, San Francisco, CA 94116','4:00pm 3/24/2019')";
+			sql = "INSERT INTO CurrentOrder VALUES('2','7','2','1','3639 Taraval, San Francisco, CA 94116','3132 Vicente St, San Francisco, CA 94116','4:00pm 3/24/2019','20190305123521','12')";
 			statement.execute(sql);
-			sql = "INSERT INTO CurrentOrder VALUES('3','8','3','2450 Sutter St, San Francisco, CA 94115','1050 Van Ness Ave, San Francisco, CA 94109','1:00pm 3/23/2019')";
+			sql = "INSERT INTO CurrentOrder VALUES('3','8','3','1','2450 Sutter St, San Francisco, CA 94115','1050 Van Ness Ave, San Francisco, CA 94109','1:00pm 3/23/2019','20190305123521','12')";
 			statement.execute(sql);		
-			sql = "INSERT INTO CurrentOrder VALUES('4','9','1','555 Tompkins Ave, San Francisco, CA 94110','299 Bayshore Blvd, San Francisco, CA 94124','2:00pm 3/26/2019')";
+			sql = "INSERT INTO CurrentOrder VALUES('4','9','1','1','555 Tompkins Ave, San Francisco, CA 94110','299 Bayshore Blvd, San Francisco, CA 94124','2:00pm 3/26/2019','20190305123521','12')";
 			statement.execute(sql);
-			sql = "INSERT INTO CurrentOrder VALUES('5','10','2','3138 Noriega St, San Francisco, CA 94122','1916 Irving St, San Francisco, CA 94122','11:00am 3/25/2019')";
+			sql = "INSERT INTO CurrentOrder VALUES('5','10','2','1','3138 Noriega St, San Francisco, CA 94122','1916 Irving St, San Francisco, CA 94122','11:00am 3/25/2019','20190305123521','12')";
 			statement.execute(sql);
 			
-			
+			//0-arrived; 1-waiting; 2-sending; 3-canceled;
 			    // INSERT INTO OrderHistory
-			sql = "INSERT INTO OrderHistory VALUES('6','2','5','success','3369 Mission St, San Francisco, CA 94110','448 Cortland Ave, San Francisco, CA 94110','11:30am 3/17/2019','12:00pm 3/17/2019')";
+			sql = "INSERT INTO OrderHistory VALUES('6','2','5','0','3369 Mission St, San Francisco, CA 94110','448 Cortland Ave, San Francisco, CA 94110','11:30am 3/17/2019','12:00pm 3/17/2019','20190305123521','12')";
 			statement.execute(sql);
 			
 		
